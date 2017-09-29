@@ -6,12 +6,10 @@
 //  Copyright © 2016 Yonah Forst. All rights reserved.
 //
 
-#if __has_include(<React/RCTConvert.h>)
-  #import <React/RCTConvert.h>
-#elif __has_include("React/RCTConvert.h")
-  #import "React/RCTConvert.h"
+#if __has_include("RCTConvert.h")
+#import "RCTConvert.h"
 #else
-  #import "RCTConvert.h"
+#import <React/RCTConvert.h>
 #endif
 
 static NSString* RNPStatusUndetermined = @"undetermined";
@@ -22,19 +20,10 @@ static NSString* RNPStatusRestricted = @"restricted";
 
 typedef NS_ENUM(NSInteger, RNPType) {
     RNPTypeUnknown,
-    RNPTypeLocation,
     RNPTypeCamera,
-    RNPTypeMicrophone,
-    RNPTypePhoto,
-    RNPTypeContacts,
-    RNPTypeEvent,
-    RNPTypeReminder,
-    RNPTypeBluetooth,
-    RNPTypeNotification,
-    RNPTypeBackgroundRefresh,
-    RNPTypeSpeechRecognition
 };
 
 @interface RCTConvert (RNPStatus)
 
 @end
+
